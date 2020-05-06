@@ -118,7 +118,6 @@ def time_stats(df):
     # TO DO: display the most common start hour
     print("Most common start hour is: {}".format(df["hour"].mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
     
 
@@ -138,7 +137,6 @@ def station_stats(df):
     # TO DO: display most frequent combination of start station and end station trip
     print("Most frequent combination of start station and end station is: "+(df["Start Station"]+" and "+df["End Station"]).mode()[0])
     
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -160,7 +158,6 @@ def trip_duration_stats(df):
     s = df["Trip Duration"].mean() - h*3600 - m*60
     print("Mean travel time: "+str(int(h))+":"+str(int(m))+":"+str(int(s)))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -199,7 +196,6 @@ def user_stats(df):
         print("There is no information about Birth Years in this database")
         
     
-    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
@@ -214,13 +210,13 @@ def main():
         user_stats(df)
 
         while True:
-            restart = input("\nWould you like to restart? Enter 'yes' or 'no'.\n")
-            if restart.lower() == 'no' or restart.lower() == 'yes':
+            restart = input("\nWould you like to restart? Enter 'Y' or 'N'.\n")
+            if restart.lower() == 'N' or restart.lower() == 'Y':
                 break
             else:
-                print("'"+restart+"' is not correct command. Please use 'yes' or 'no' command.")
+                print("'"+restart+"' is not correct command. Please use 'Y' or 'N' command.")
                 
-        if restart.lower() == 'no':  
+        if restart.lower() == 'N':  
             break
             
 
