@@ -90,14 +90,14 @@ def load_data(city, month, day):
         df = df[df['day_of_week'] == int(day)-1]
     
     while True:
-        preview = input('\nWould you like to see preview of data? (yes/no)\n')
-        if preview.lower() == 'yes':
+        preview = input('\nWould you like to see preview of data? (Y/N)\n')
+        if preview.lower() == 'Y':
             print(df.head())
             break
-        elif preview.lower() == 'no':  
+        elif preview.lower() == 'N':  
             break
         else:
-            print("'"+preview+"' is not correct command. Please use 'yes' or 'no' command.")
+            print("'"+preview+"' is not correct command. Please use 'Y' or 'N' command.")
     
     return df
 
